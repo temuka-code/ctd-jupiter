@@ -19,4 +19,4 @@ for (let skill of skillsList) {
     let skillLists = document.createElement('li');
     skillLists.innerHTML = skill;
     skillsUList.appendChild(skillLists);  
-}
+
