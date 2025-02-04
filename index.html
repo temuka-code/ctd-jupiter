@@ -14,30 +14,33 @@
     <title>TomN's Portfolio</title>
 </head>
 <body>
-    <nav id="navigation">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#connect">Connect</a></li>
-        </ul>
-    </nav>
+    <header class="header">
+        <nav id="navigation">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#connect" class="connect">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
     <div id="name-container">
         <h1 id="name-header">Tom Namhay</h1>
     </div>
-    
-    <div id="name-container">
-        <h1 id="name-header">Tom Namhay</h1>
-    </div>
-    
-    <section id="About">
-        <h2 class="section-header">About</h2>
-        
-        <!-- <img src="img_chania.jpg" alt="Flowers in Chania"> -->
-         <img src="img/Grinch-Wallpaper-17.jpg" alt="Grinch pic",
-         id="profile-picture" >
-        <p>I'm student in CTD, learning Javascript and website development</p>
+    <section id="about">
+        <div class="about-content">
+            <div class="about-story">
+                <h2 class="section-header">About</h2>
+                
+                
+                <p>I'm student in CTD, learning Javascript and website development</p>
+            </div>
+            <div class="img-box">
+                
+                <img src="img/Grinch-Wallpaper-17.jpg" alt="Grinch pic",id="profile-picture" >
+            </div>
+        </div>
     </section>
     
     <section id="experience">
@@ -87,34 +90,34 @@
     </section> 
     <section id="messageForm-section">
         <h2>Leave a message</h2>
-        <form id="messageForm" name="leave_massage">
-            <label for="usersName"> Name:</label>
-            <input
-                type="text"
-                id="usersName"
-                name="usersName"
-                required="true"
-            /><br />
-            <label for="usersEmail"> Email:</label>
-            <input
-                type="email"
-                id="usersEmail"
-                name="usersEmail"
-                required="true"
-            /><br />
-            <label for="usersMessage">Message:</label>
-            <textarea
-                id="usersMessage"
-                name="usersMessage"
-                required="true">
-            </textarea>
-            <br />
-            <button type="submit">Submit</button>
-        </form>
+            <form id="messageForm" name="leave_massage">
+                <label for="usersName"> Name:</label>
+                <input
+                    type="text"
+                    id="usersName"
+                    name="usersName"
+                    required="true"
+                /><br />
+                <label for="usersEmail"> Email:</label>
+                <input
+                    type="email"
+                    id="usersEmail"
+                    name="usersEmail"
+                    required="true"
+                /><br />
+                <label for="usersMessage">Message:</label>
+                <textarea
+                    id="usersMessage"
+                    name="usersMessage"
+                    required="true">
+                </textarea>
+                <br />
+                <button type="submit">Submit</button>
+            </form>
     </section>
-    <section id="message-section">
+    <section id="message_section">
         <h2>Messages</h2>
-        <ul id="messages">
+        <ul >
 
         </ul>
     </section>  
