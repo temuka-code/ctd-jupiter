@@ -73,3 +73,36 @@ function createDeleteButton() {
     return deleteButton;
     
 };
+// Create a fetch for gitHub repos
+const userName="temuka-code"
+fetch(`https://api.github.com/users/${userName}/repos`)
+
+   //Get the response
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+    return response.text(); // Parse the response as JSON
+  })
+  //Get the data and add it to the html
+  .then((data) => {
+    
+    const repositories = JSON.parse(data);
+    console.log (repositories);
+
+    //Find the project section and ul
+    const projectSection = document.getElementById("projects");
+
+    const projectList = projectSection.getElementsByTagName("ul");
+   
+    //Create the respositories list by adding it to the html
+    for (let i = 0; i < repositories.length; i++) {
+      var project = document.createElement("li");
+      project.innerText = repositories[i].name;
+      console.log(project);
+      projectList[0].appendChild(project);
+    }
+  })
+  .catch((error) => {
+    console.error("An error occurred:", error);
+  });
