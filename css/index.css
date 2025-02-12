@@ -63,8 +63,9 @@ h2{
     background-color: rgb(76, 130, 224);
 }  */
 #navigation ul {
-    display: flex;
-    flex-direction: column; /*mobile-first */
+    display: flexbox;
+    /* flex-direction: column;  */
+    /*mobile-first */
     gap: 3em;
     justify-content: center;
     list-style: none;
@@ -96,12 +97,59 @@ h2{
     
 }
 #navigation ul a:hover{
+    background-color: yellow;
+    color: rgb(215, 215, 130);
+    border-radius: 20px solid rgb(236, 236, 71);
 
-    color: rgb(252, 252, 248);
-    border-radius: 10px solid rgb(236, 236, 71);
+}
+.hamburger-menu{
+    position:absolute;
+    top: 0.9em;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.hamburger-menu .bar{
+    height: 3px;
+    width: 100%;
+    background-color: rgb(76, 130, 224);
+    border: radius 15px;
 
 }
 
+.logos{
+    background-color: rgb(223, 219, 219);
+    border-radius:30px ;
+    padding: 30px 0px;
+    .marque{
+        width: 100vw;
+        max-width:100% ;
+        height: 128px;
+        overflow: hidden;
+        position: relative;
+        .track{
+            position:absolute;
+            white-space: nowrap;
+            will-change:transform;
+            animation: marque 40s linear infinite;
+            display: flex;
+            gap:10px
+        }
+    }
+
+}
+@keyframes marque {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
 #about, #experience, #skills, #projects, #connect {
     scroll-margin-top: 3em;
 }
@@ -170,10 +218,15 @@ input,textarea{
 }
 
 @media (min-width: 600px) {
+    .hamburger-menu{
+        display: flex;
+    }
+    
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
     #navigation ul {
+       
         flex-direction: row;
         gap: 4em;
     }
@@ -183,6 +236,7 @@ input,textarea{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     #navigation ul {
+        
         flex-direction: row;
         gap: 4em;
     }
